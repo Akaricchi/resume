@@ -1,0 +1,33 @@
+main {
+    padding-bottom: 2em;
+}
+
+.mid {
+    text-align: center;
+}
+
+h1.title {
+    text-align: center;
+}
+
+h1 + p.subtitle {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+hr.docutils {
+   width: 100%;
+}
+
+.project-title {
+    margin-bottom: 0em;
+}
+
+.project-role {
+    margin-bottom: 1em;
+    /* margin-left: 1em; */
+}
+
+.project-desc {
+    margin-left: 1em;
+}
