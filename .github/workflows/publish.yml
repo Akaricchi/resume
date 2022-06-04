@@ -18,6 +18,7 @@ jobs:
         sudo apt install -y -qq python3-docutils make
 
     - name: Build HTML
+      id: build
       run: |
         make
         echo ::set-output name=commit::$(git rev-parse HEAD)
@@ -33,4 +34,4 @@ jobs:
       with:
         default_author: github_actions
         add: index.html
-        message: Publish revision ${{ steps.vars.outputs.commit }}
+        message: Publish revision ${{ steps.build.outputs.commit }}
