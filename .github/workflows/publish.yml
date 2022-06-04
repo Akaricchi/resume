@@ -24,7 +24,8 @@ jobs:
 
     - name: Prepare to commit
       run: |
-        git checkout html
+        git fetch
+        git checkout -b html origin/html
         mv resume.html index.html
 
     - name: Commit and push
