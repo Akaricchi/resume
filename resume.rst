@@ -37,7 +37,7 @@ Skills
 
 * **Version control**: git
 
-* **Debugging**: gdb, prof, strace, etc.
+* **Debugging**: RenderDoc, apitrace, gdb, prof, strace, etc.
 
 * **Documentation**: Doxygen, docutils
 
