@@ -1,0 +1,40 @@
+name: Build and publish HTML
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    name: Build and publish HTML
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+
+    - name: Install Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install docutils
+      run: |
+        sudo apt update
+        sudo apt install -y -qq python3-docutils make
+
+    - name: Build HTML
+      run: |
+        make
+        echo ::set-output name=commit::$(git rev-parse HEAD)
+
+    - name: Prepare to commit
+      run: |
+        git checkout html
+        mv resume.html index.html
+
+    - name: Commit and push
+      uses: EndBug/add-and-commit@v9
+      with:
+        default_author: github_actions
+        add: index.html
+        message: Publish revision ${{ steps.vars.outputs.commit }}
