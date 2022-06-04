@@ -4,6 +4,13 @@ from docutils.parsers.rst import roles, nodes, directives, Directive
 from docutils.statemachine import StringList
 
 
+def get_revision():
+    import subprocess
+    p = subprocess.run(['git', 'rev-parse', 'HEAD'], capture_output=True)
+    assert p.returncode == 0
+    return p.stdout.strip().decode('utf8')
+
+
 def role(func):
     roles.register_local_role(func.__name__, func)
 
@@ -23,6 +30,25 @@ def tel(role, rawtext, text, lineno, inliner, options=None, content=None):
 def github(role, rawtext, text, lineno, inliner, options=None, content=None):
     ref = f'https://github.com/{text}'
     node = nodes.reference(rawtext, '@'+text, refuri=ref)
+    return [node], []
+
+
+@role
+def revision(role, rawtext, text, lineno, inliner, options=None, content=None):
+    rev = get_revision()
+    url = f'https://github.com/Akaricchi/resume/commit/{rev}'
+    
+    node = nodes.reference(rawtext, refuri=url)
+    node += nodes.literal(text=rev[:8])
+   
+    return [node], []
+
+
+@role
+def date(role, rawtext, text, lineno, inliner, options=None, content=None):
+    import datetime
+    now = datetime.datetime.utcnow()
+    node = nodes.inline(text=now.strftime(text))
     return [node], []
 
 

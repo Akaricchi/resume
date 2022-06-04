@@ -134,6 +134,17 @@ Open Source involvement
   A beatmania-style rhythm game written in Python with a pygame frontend. Can load osu!mania beatmaps.
 
 
+.. project:: This resume
+  :url: https://akaricchi.github.io/resume
+  :role: Author (2022 - present)
+  
+  An up to date HTML version of this resume is available at https://akaricchi.github.io/resume
+  
+  You have revision :revision:`.`, built on :date:`%b %d %H:%M UTC`
+  
+  The source code is available at https://github.com/Akaricchi/resume
+
+
 .. _Asyncify: https://kripken.github.io/blog/wasm/2019/07/16/asyncify.html
 .. _Basis Universal: https://github.com/taisei-project/basis_universal
 .. _Danmaku: https://en.wikipedia.org/wiki/Danmaku
