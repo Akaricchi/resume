@@ -140,7 +140,7 @@ Open Source involvement
   
   An up to date HTML version of this resume is available at https://akaricchi.github.io/resume
   
-  You have revision :revision:`.`, built on :date:`%b %d %H:%M UTC`
+  You have revision :revision:`.`, built on :date:`%b %d %Y %H:%M UTC`
   
   The source code is available at https://github.com/Akaricchi/resume
 
