@@ -27,7 +27,7 @@ Skills
 
     * **Primary expertise**: C
     * **Secondary expertise**: Python
-    * **Familiarity**: Bash, C++, JavaScript, Lua, Java, various others.
+    * **Familiarity**: Bash, C++, C#, JavaScript, Lua, Java, various others.
 
 * **Operating systems**: Linux
 
