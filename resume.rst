@@ -35,7 +35,11 @@ Skills
 
 * **Build systems**: Meson, CMake, GNU Make
 
-* **Version control**: git
+* **Collaboration**:
+
+    * Proficient with **git**: hygienic commits; can work on multiple branches at a time; ``rebase`` is my close friend.
+    * Able to read, review, and integrate pull requests/patches from contributors.
+    * Able to work with maintainers of other projects, submit and iterate on patches, discuss design decisions.
 
 * **Debugging**: RenderDoc, apitrace, gdb, prof, strace, etc.
 
