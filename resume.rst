@@ -11,7 +11,7 @@ Software Developer
 
 ----
 
-Hobbyist programmer from Ukraine with over 10 years of informal experience, particularly in game development and 
+Self-taught programmer from Ukraine with over 10 years of informal experience, particularly in game development and 
 modding, as well as in contributing to and maintaining various open source software projects.
 
 Skills
