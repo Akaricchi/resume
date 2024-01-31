@@ -19,9 +19,10 @@ Skills
 
 * **Spoken languages**:
     
+    * English (fluent)
+    * German (A2, learning)
     * Ukrainian (native)
     * Russian (native)
-    * English (fluent)
 
 * **Programming languages**:
 
