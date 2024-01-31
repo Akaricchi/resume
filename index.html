@@ -2,14 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <title>Andrii Alexieiev</title>
 <style type="text/css">
 
 /* Minimal style sheet for the HTML output of Docutils.                    */
 /*                                                                         */
 /* :Author: Günter Milde, based on html4css1.css by David Goodger          */
-/* :Id: $Id: minimal.css 8397 2019-09-20 11:09:34Z milde $               */
+/* :Id: $Id: minimal.css 8642 2021-03-26 13:51:14Z milde $               */
 /* :Copyright: © 2015 Günter Milde.                                        */
 /* :License: Released under the terms of the `2-Clause BSD license`_,      */
 /*    in short:                                                            */
@@ -28,81 +29,67 @@
 /* .. _CSS2.1: http://www.w3.org/TR/CSS2                                  */
 /* .. _validates: http://jigsaw.w3.org/css-validator/validator$link       */
 
-/* alignment of text and inline objects inside block objects*/
-.align-left   { text-align: left; }
-.align-right  { text-align: right; }
-.align-center { clear: both; text-align: center; }
-.align-top    { vertical-align: top; }
-.align-middle { vertical-align: middle; }
-.align-bottom { vertical-align: bottom; }
-
 /* titles */
-h1.title, p.subtitle {
-  text-align: center;
-}
 p.topic-title,
-p.sidebar-title,
-p.rubric,
 p.admonition-title,
 p.system-message-title {
   font-weight: bold;
 }
-h1 + p.subtitle,
-h1 + p.section-subtitle {
-  font-size: 1.6em;
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
 }
-h2 + p.section-subtitle { font-size: 1.28em; }
+p.rubric {
+  color: maroon;
+}
 p.subtitle,
 p.section-subtitle,
 p.sidebar-subtitle {
   font-weight: bold;
   margin-top: -0.5em;
 }
-p.sidebar-title,
-p.rubric {
-  font-size: larger;
+h1 + p.subtitle {
+  font-size: 1.6em;
 }
-p.rubric { color: maroon; }
-a.toc-backref {
+h2 + p.section-subtitle, a.toc-backref {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* Warnings, Errors */
-div.caution p.admonition-title,
-div.attention p.admonition-title,
-div.danger p.admonition-title,
-div.error p.admonition-title,
-div.warning p.admonition-title,
-div.system-messages h1,
-div.error,
-span.problematic,
-p.system-message-title {
+.system-messages h2,
+.system-message-title,
+span.problematic {
   color: red;
 }
 
-/* inline literals */
-span.docutils.literal {
+/* Inline Literals */
+.docutils.literal {
   font-family: monospace;
   white-space: pre-wrap;
 }
-/* do not wraph at hyphens and similar: */
+/* do not wrap at hyphens and similar: */
 .literal > span.pre { white-space: nowrap; }
 
 /* Lists */
 
 /* compact and simple lists: no margin between items */
-.simple  li, .compact li,
-.simple  ul, .compact ul,
-.simple  ol, .compact ol,
-.simple > li p, .compact > li p,
-dl.simple > dd, dl.compact > dd {
+.simple  li, .simple  ul, .simple  ol,
+.compact li, .compact ul, .compact ol,
+.simple  > li p, dl.simple  > dd,
+.compact > li p, dl.compact > dd {
   margin-top: 0;
   margin-bottom: 0;
 }
+/* Nested Paragraphs */
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+td > p, th > p { margin-bottom: 0; }
 
 /* Table of Contents */
-div.topic.contents { margin: 0.5em 0; }
-div.topic.contents ul {
+.topic.contents { margin: 0.5em 0; }
+.topic.contents ul.auto-toc {
   list-style-type: none;
   padding-left: 1.5em;
 }
@@ -114,14 +101,14 @@ ol.upperalpha { list-style: upper-alpha }
 ol.lowerroman { list-style: lower-roman }
 ol.upperroman { list-style: upper-roman }
 
-dt span.classifier { font-style: italic }
-dt span.classifier:before {
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
   font-style: normal;
   margin: 0.5em;
   content: ":";
 }
-
-/* Field Lists and drivatives */
+/* Field Lists and similar */
 /* bold field name, content starts on the same line */
 dl.field-list > dt,
 dl.option-list > dt,
@@ -139,7 +126,7 @@ dl.citation > dt {
 dl.field-list > dd,
 dl.option-list > dd,
 dl.docinfo > dd {
-  margin-left:  9em; /* ca. 14 chars in the test examples */
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
 }
 /* start field-body on a new line after long field names */
 dl.field-list > dd > *:first-child,
@@ -156,18 +143,20 @@ dl.docinfo > dt:after {
 }
 
 /* Bibliographic Fields (docinfo) */
-pre.address { font: inherit; }
-dd.authors > p { margin: 0; }
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0.5em 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
 
 /* Option Lists */
-dl.option-list { margin-left: 1.5em; }
 dl.option-list > dt { font-weight: normal; }
 span.option { white-space: nowrap; }
 
 /* Footnotes and Citations  */
-dl.footnote.superscript > dd {margin-left: 1em; }
-dl.footnote.brackets > dd {margin-left: 2em; }
-dl > dt.label { font-weight: normal; }
+dl.footnote.superscript > dd { margin-left: 1em; }
+dl.footnote.brackets > dd { margin-left: 2em; }
+dl.footnote > dt { font-weight: normal; }
 a.footnote-reference.brackets:before,
 dt.label > span.brackets:before { content: "["; }
 a.footnote-reference.brackets:after,
@@ -175,130 +164,113 @@ dt.label > span.brackets:after { content: "]"; }
 a.footnote-reference.superscript,
 dl.footnote.superscript > dt.label {
   vertical-align: super;
-  font-size: smaller;
+  font-size: small;
 }
-dt.label > span.fn-backref { margin-left: 0.2em; }
+dt.label > span.fn-backref {
+  margin-left: 0.2em;
+  font-weight: normal;
+}
 dt.label > span.fn-backref > a { font-style: italic; }
 
-/* Line Blocks */
-div.line-block { display: block; }
-div.line-block div.line-block {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 40px;
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
 }
+.align-center {
+  clear: both;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
 
-/* Figures, Images, and Tables */
-.figure.align-left,
-figure.align-left,
-img.align-left,
-object.align-left,
-table.align-left {
-  margin-right: auto;
-}
-.figure.align-center,
-figure.align-center,
-img.align-center,
-object.align-center,
-table.align-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-.figure.align-right,
-figure.align-right,
-img.align-right,
-object.align-right,
-table.align-right {
-  margin-left: auto;
-}
-.figure.align-center, .figure.align-right,
-figure.align-center, figure.align-right,
-img.align-center, img.align-right,
-object.align-center, object.align-right {
-  display: block;
-}
 /* reset inner alignment in figures and tables */
-.figure.align-left, .figure.align-right,
 figure.align-left, figure.align-right,
 table.align-left, table.align-center, table.align-right {
   text-align: inherit;
 }
 
-/* Admonitions and System Messages */
-div.admonition,
-div.system-message,
-div.sidebar,
-aside.sidebar {
-  margin: 1em 1.5em;
-  border: medium outset;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-right: 1em;
-  padding-left: 1em;
+/* Text Blocks */
+blockquote,
+div.topic,
+aside.topic {
+  margin: 1em 2em;
 }
-
-/* Sidebar */
-div.sidebar,
-aside.sidebar {
+.sidebar,
+.admonition,
+.system-message {
+  border: thin solid;
+  margin: 1em 2em;
+  padding: 0.5em 1em;
+}
+.sidebar {
   width: 30%;
   max-width: 26em;
   float: right;
   clear: right;
 }
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
 
-/* Text Blocks */
-blockquote,
-div.topic,
-pre.literal-block,
-pre.doctest-block,
-pre.math,
-pre.code {
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+/* Code line numbers: dropped when copying text from the page */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno); /* …, none) fallback not supported by any browser */
+  color: gray;
 }
-pre.code .ln { color: gray; } /* line numbers */
 
 /* Tables */
-table { border-collapse: collapse; }
+table {
+  border-collapse: collapse;
+}
 td, th {
-  border-style: solid;
-  border-color: silver;
+  border: thin solid silver;
   padding: 0 1ex;
-  border-width: thin;
 }
-td > p:first-child, th > p:first-child { margin-top: 0; }
-td > p, th > p { margin-bottom: 0; }
-
-table > caption {
-  text-align: left;
-  margin-bottom: 0.25em
-}
-
-table.borderless td, table.borderless th {
+.borderless td, .borderless th {
   border: 0;
   padding: 0;
   padding-right: 0.5em /* separate table cells */
 }
 
-/* Document Header and Footer */
-/* div.header,				      */
-/* header { border-bottom: 1px solid black; } */
-/* div.footer,				      */
-/* footer { border-top: 1px solid black; }    */
+table > caption {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+table.captionbelow {
+  caption-side: bottom;
+}
 
-/* new HTML5 block elements: set display for older browsers */
-header, section, footer, aside, nav, main, article, figure {
+/* Document Header and Footer */
+header { border-bottom: 1px solid black; }
+footer { border-top: 1px solid black; }
+
+/* Images are block-level by default in Docutils */
+/* New HTML5 block elements: set display for older browsers */
+img, header, section, footer, aside, nav, main, article, figure, video {
   display: block;
+}
+/* inline images */
+p img, p video, figure img, figure video {
+  display: inline;
 }
 
 </style>
 <style type="text/css">
 
 /* CSS31_ style sheet for the output of Docutils HTML writers.             */
-/* Rules for easy reading and pre-defined style variants.		   */
+/* Rules for easy reading and pre-defined style variants.                  */
 /*                                                                         */
 /* :Author: Günter Milde, based on html4css1.css by David Goodger          */
-/* :Id: $Id: plain.css 8397 2019-09-20 11:09:34Z milde $               */
+/* :Id: $Id: plain.css 8636 2021-03-19 00:23:33Z milde $                                                               */
 /* :Copyright: © 2015 Günter Milde.                                        */
 /* :License: Released under the terms of the `2-Clause BSD license`_,      */
 /*    in short:                                                            */
@@ -306,11 +278,11 @@ header, section, footer, aside, nav, main, article, figure {
 /*    Copying and distribution of this file, with or without modification, */
 /*    are permitted in any medium without royalty provided the copyright   */
 /*    notice and this notice are preserved.                                */
-/*    	     	      	     	 					   */
+/*                                                                         */
 /*    This file is offered as-is, without any warranty.                    */
 /*                                                                         */
 /* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
-/* .. _CSS3: http://www.w3.org/TR/CSS3		        		   */
+/* .. _CSS3: http://www.w3.org/TR/CSS3                                     */
 
 
 /* Document Structure */
@@ -321,23 +293,26 @@ body {
   margin: 0;
   background-color: #dbdbdb;
 }
-div.document,
-main {
+main, footer, header {
   line-height:1.3;
-  counter-reset: table;
-  /* counter-reset: figure; */
   /* avoid long lines --> better reading */
+  /* optimum is 45…75 characters/line <http://webtypography.net/2.1.2> */
   /* OTOH: lines should not be too short because of missing hyphenation, */
-  max-width: 50em;
+  max-width: 50rem;
   padding: 1px 2%; /* 1px on top avoids grey bar above title (mozilla) */
   margin: auto;
+}
+main {
+  counter-reset: table figure;
   background-color: white;
 }
-
-/* Sections */
+footer, header {
+  font-size: smaller;
+  padding: 0.5em 2%;
+  border: none;
+}
 
 /* Transitions */
-
 hr.docutils {
   width: 80%;
   margin-top: 1em;
@@ -346,10 +321,9 @@ hr.docutils {
 }
 
 /* Paragraphs */
-/* ========== */
 
 /* vertical space (parskip) */
-p, ol, ul, dl,
+p, ol, ul, dl, li, dd,
 div.line-block,
 div.topic,
 table {
@@ -368,10 +342,12 @@ dl > dd {
 /* Lists */
 /* ===== */
 
-/* Definition Lists */
+/* Separate list entries in compound lists */
+dl > dd, ol > li,
 
-/* lists nested in definition lists */
-/* (:only-child is new in CSS 3) */
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+/* (:only-child is new in CSS 3)           */
 dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
 
 /* Description Lists */
@@ -412,28 +388,16 @@ div.dedication p.topic-title {
   font-style: normal;
 }
 
-/* Citations */
-dl.citation dt.label {
-  font-weight: bold;
-}
-span.fn-backref {
-  font-weight: normal;
-}
-
 /* Text Blocks */
 /* =========== */
 
 /* Literal Blocks */
-
-pre.literal-block,
-pre.doctest-block,
-pre.math,
-pre.code {
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
   font-family: monospace;
 }
 
 /* Block Quotes */
-
 blockquote > table,
 div.topic > table {
   margin-top: 0;
@@ -495,32 +459,45 @@ dl.footnote {
 /* Images and Figures */
 
 /* let content flow to the side of aligned images and figures */
-.figure.align-left,
 figure.align-left,
 img.align-left,
+video.align-left,
 object.align-left {
-  display: block;
   clear: left;
   float: left;
   margin-right: 1em;
 }
-.figure.align-right,
 figure.align-right,
 img.align-right,
+video.align-right,
 object.align-right {
-  display: block;
   clear: right;
   float: right;
   margin-left: 1em;
 }
-/* Stop floating sidebars, images and figures at section level 1,2,3 */
-h1, h2, h3 { clear: both; }
+/* Stop floating sidebars, images and figures */
+h1, h2, h3, h4, footer, header { clear: both; }
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
 
 /* Sidebar */
-
 /* Move right. In a layout with fixed margins, */
-/* it can be moved into the margin.   	       */
-div.sidebar,
+/* it can be moved into the margin.            */
 aside.sidebar {
   width: 30%;
   max-width: 26em;
@@ -530,10 +507,8 @@ aside.sidebar {
 }
 
 /* Code */
-
 pre.code { padding: 0.7ex }
 pre.code, code { background-color: #eeeeee }
-pre.code .ln { color: gray; } /* line numbers */
 /* basic highlighting: for a complete scheme, see */
 /* http://docutils.sourceforge.net/sandbox/stylesheets/ */
 pre.code .comment, code .comment { color: #5C6576 }
@@ -552,30 +527,8 @@ pre.code .inserted, code .inserted { background-color: #A3D289}
 /* Compound Paragraph */
 /* Container          */
 
-/* can be styled in a custom stylesheet */
-
-/* Document Header and Footer */
-
-footer, header,
-div.footer, div.header {
-  font-size: smaller;
-  clear: both;
-  padding: 0.5em 2%;
-  background-color: #ebebee;
-  border: none;
-}
-
 /* Inline Markup */
 /* ============= */
-
-/* Emphasis           */
-/*   em               */
-/* Strong Emphasis    */
-/*   strong	      */
-/* Interpreted Text   */
-/*   span.interpreted */
-/* Title Reference    */
-/*   cite	      */
 
 /* Inline Literals                                          */
 /* possible values: normal, nowrap, pre, pre-wrap, pre-line */
@@ -586,7 +539,7 @@ a { text-decoration: none; }
 
 /* External Targets       */
 /*   span.target.external */
-/* Internal Targets  	  */
+/* Internal Targets       */
 /*   span.target.internal */
 /* Footnote References    */
 /*   a.footnote-reference */
@@ -633,23 +586,24 @@ hr.docutils {
 </style>
 </head>
 <body>
-<div class="document" id="andrii-alexieiev">
+<main id="andrii-alexieiev">
 <h1 class="title">Andrii Alexieiev</h1>
 <p class="subtitle" id="software-developer">Software Developer</p>
 
-<p class="mid"><a class="reference external" href="tel:+431604345920">+43 160 4345920</a> | <a class="reference external" href="mailto:akari&#64;taisei-project.org">akari&#64;taisei-project.org</a> | GitHub: <a class="reference external" href="https://github.com/Akaricchi">&#64;Akaricchi</a> | Mörfelden-Walldorf, Germany</p>
+<p class="mid"><a class="reference external" href="tel:+491604345920">+49 160 4345920</a> | <a class="reference external" href="mailto:akari&#64;taisei-project.org">akari&#64;taisei-project.org</a> | GitHub: <a class="reference external" href="https://github.com/Akaricchi">&#64;Akaricchi</a> | Mörfelden-Walldorf, Germany</p>
 <hr class="docutils" />
 <p>Self-taught programmer from Ukraine with over 10 years of informal experience, particularly in game development and
 modding, as well as in contributing to and maintaining various open source software projects.</p>
-<div class="section" id="skills">
-<h1>Skills</h1>
+<section id="skills">
+<h2>Skills</h2>
 <ul>
 <li><p><strong>Spoken languages</strong>:</p>
 <blockquote>
 <ul class="simple">
+<li><p>English (fluent)</p></li>
+<li><p>German (A2, learning)</p></li>
 <li><p>Ukrainian (native)</p></li>
 <li><p>Russian (native)</p></li>
-<li><p>English (fluent)</p></li>
 </ul>
 </blockquote>
 </li>
@@ -678,11 +632,11 @@ modding, as well as in contributing to and maintaining various open source softw
 <li><p><strong>Documentation</strong>: Doxygen, docutils</p></li>
 <li><p><strong>Other software</strong>: nginx, Blender, Krita, GIMP, SPIR-V tools</p></li>
 </ul>
-</div>
-<div class="section" id="open-source-involvement">
-<h1>Open Source involvement</h1>
-<div class="section" id="taisei-project">
-<h2 class="project-title"><a class="reference external" href="https://taisei-project.org/">Taisei Project</a></h2>
+</section>
+<section id="open-source-involvement">
+<h2>Open Source involvement</h2>
+<section id="taisei-project">
+<h3 class="project-title"><a class="reference external" href="https://taisei-project.org/">Taisei Project</a></h3>
 <div class="project-role docutils container">
 <p>Contributor <em>(2011 - 2013)</em>; Lead Developer <em>(2017 - present)</em></p>
 </div>
@@ -698,9 +652,9 @@ coroutines, with a macro-powered DSL.</p></li>
 <li><p>Designed and implemented a lot of the gameplay mechanics, stages, bullet patterns, and special effects.</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="koishi">
-<h2 class="project-title"><a class="reference external" href="https://github.com/taisei-project/koishi">Koishi</a></h2>
+</section>
+<section id="koishi">
+<h3 class="project-title"><a class="reference external" href="https://github.com/taisei-project/koishi">Koishi</a></h3>
 <div class="project-role docutils container">
 <p>Lead Developer <em>(2019 - present)</em></p>
 </div>
@@ -710,9 +664,9 @@ but for native code). Supports many operating systems and CPU architectures. Mod
 assembly routines, POSIX ucontext, Windows fibers, longjmp, Emscripten fibers, etc.</p>
 <p>Designed for use in <a class="reference internal" href="#taisei-project">Taisei Project</a>, but is general enough to be useful elsewhere.</p>
 </div>
-</div>
-<div class="section" id="emscripten">
-<h2 class="project-title"><a class="reference external" href="https://emscripten.org/">Emscripten</a></h2>
+</section>
+<section id="emscripten">
+<h3 class="project-title"><a class="reference external" href="https://emscripten.org/">Emscripten</a></h3>
 <div class="project-role docutils container">
 <p>Contributor <em>(2019 - present; intermittent)</em></p>
 </div>
@@ -725,9 +679,9 @@ ucontext, based on <a class="reference external" href="https://kripken.github.io
 <li><p>Found and squished various random bugs in the runtime.</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="meson">
-<h2 class="project-title"><a class="reference external" href="https://mesonbuild.com/">Meson</a></h2>
+</section>
+<section id="meson">
+<h3 class="project-title"><a class="reference external" href="https://mesonbuild.com/">Meson</a></h3>
 <div class="project-role docutils container">
 <p>Contributor <em>(2017 - present; intermittent)</em></p>
 </div>
@@ -742,9 +696,9 @@ ucontext, based on <a class="reference external" href="https://kripken.github.io
 <a class="reference external" href="https://github.com/taisei-project/zlib/tree/meson-1.2.11">zlib</a>, <a class="reference external" href="https://github.com/taisei-project/ogg/tree/meson-1.3.4">ogg</a>, <a class="reference external" href="https://github.com/taisei-project/opus/tree/meson-1.3.1">opus</a>, <a class="reference external" href="https://github.com/taisei-project/opusfile/tree/meson-0.12">opusfile</a></p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="rocketminsta">
-<h2 class="project-title"><a class="reference external" href="https://github.com/kasymovga/RocketMinsta">RocketMinsta</a></h2>
+</section>
+<section id="rocketminsta">
+<h3 class="project-title"><a class="reference external" href="https://github.com/kasymovga/RocketMinsta">RocketMinsta</a></h3>
 <div class="project-role docutils container">
 <p>Lead Developer <em>(2011 - 2017)</em></p>
 </div>
@@ -753,9 +707,9 @@ ucontext, based on <a class="reference external" href="https://kripken.github.io
 game types, bug fixes, server administration tools, updated graphics, <a class="reference external" href="https://xonotic.org/">Xonotic</a> backports, and more. Written in a
 dialect of QuakeC, an interpreted language for Quake 1-based engines.</p>
 </div>
-</div>
-<div class="section" id="darkplacesrm">
-<h2 class="project-title"><a class="reference external" href="https://github.com/kasymovga/DarkPlacesRM">DarkPlacesRM</a></h2>
+</section>
+<section id="darkplacesrm">
+<h3 class="project-title"><a class="reference external" href="https://github.com/kasymovga/DarkPlacesRM">DarkPlacesRM</a></h3>
 <div class="project-role docutils container">
 <p>Fork Developer <em>(2015 - 2017)</em></p>
 </div>
@@ -763,9 +717,9 @@ dialect of QuakeC, an interpreted language for Quake 1-based engines.</p>
 <p>A fork of the DarkPlaces engine which powers <a class="reference external" href="http://www.alientrap.com/games/nexuiz/">Nexuiz</a> and <a class="reference external" href="https://xonotic.org/">Xonotic</a>. Features <a class="reference internal" href="#rocketminsta">RocketMinsta</a>-specific extensions and
 compatibility fixes.</p>
 </div>
-</div>
-<div class="section" id="rmqcc">
-<h2 class="project-title"><a class="reference external" href="https://github.com/kasymovga/rmqcc">rmqcc</a></h2>
+</section>
+<section id="rmqcc">
+<h3 class="project-title"><a class="reference external" href="https://github.com/kasymovga/rmqcc">rmqcc</a></h3>
 <div class="project-role docutils container">
 <p>Fork Developer <em>(2016 - 2017)</em></p>
 </div>
@@ -773,29 +727,29 @@ compatibility fixes.</p>
 <p>A fork of <a class="reference external" href="https://www.fteqcc.org/">fteqcc</a>, a QuakeC compiler, used to compile the <a class="reference internal" href="#rocketminsta">RocketMinsta</a> source code. Features various language
 extensions and fixes.</p>
 </div>
-</div>
-<div class="section" id="uz">
-<h2 class="project-title"><a class="reference external" href="https://github.com/Akaricchi/muz">ųz</a></h2>
+</section>
+<section id="uz">
+<h3 class="project-title"><a class="reference external" href="https://github.com/Akaricchi/muz">ųz</a></h3>
 <div class="project-role docutils container">
 <p>Lead Developer <em>(2015 - 2016)</em></p>
 </div>
 <div class="project-desc docutils container">
 <p>A beatmania-style rhythm game written in Python with a pygame frontend. Can load osu!mania beatmaps.</p>
 </div>
-</div>
-<div class="section" id="this-resume">
-<h2 class="project-title"><a class="reference external" href="https://akaricchi.github.io/resume">This resume</a></h2>
+</section>
+<section id="this-resume">
+<h3 class="project-title"><a class="reference external" href="https://akaricchi.github.io/resume">This resume</a></h3>
 <div class="project-role docutils container">
 <p>Author <em>(2022 - present)</em></p>
 </div>
 <div class="project-desc docutils container">
 <p>An up to date HTML version of this resume is available at <a class="reference external" href="https://akaricchi.github.io/resume">https://akaricchi.github.io/resume</a></p>
-<p>You have revision <a class="reference external" href="https://github.com/Akaricchi/resume/commit/4d7a5ff5cd665a83b45d02b2d342dd9e23436af3"><span class="docutils literal">4d7a5ff5</span></a>, built on <span>Jun 27 2022 16:27 UTC</span></p>
+<p>You have revision <a class="reference external" href="https://github.com/Akaricchi/resume/commit/0830355898a31592df57bfa797d68681beacc716"><span class="docutils literal">08303558</span></a>, built on <span>Jan 31 2024 06:48 UTC</span></p>
 <p>The source code is available at <a class="reference external" href="https://github.com/Akaricchi/resume">https://github.com/Akaricchi/resume</a></p>
 </div>
-</div>
+</section>
 <!-- vim: tw=120 spell -->
-</div>
-</div>
+</section>
+</main>
 </body>
 </html>
