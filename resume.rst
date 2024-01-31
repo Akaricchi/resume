@@ -7,7 +7,7 @@ Software Developer
 
 .. class:: mid
 
-  :tel:`+43 160 4345920` | akari@taisei-project.org | GitHub: :github:`Akaricchi` | Mörfelden-Walldorf, Germany
+  :tel:`+49 160 4345920` | akari@taisei-project.org | GitHub: :github:`Akaricchi` | Mörfelden-Walldorf, Germany
 
 ----
 
