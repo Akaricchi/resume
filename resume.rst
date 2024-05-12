@@ -20,7 +20,7 @@ Skills
 * **Spoken languages**:
     
     * English (fluent)
-    * German (A2, learning)
+    * German (B1, learning)
     * Ukrainian (native)
     * Russian (native)
 
