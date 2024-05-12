@@ -1,6 +1,6 @@
 
-Andrii Alexieiev
-================
+Andrii Aleksieiev
+=================
 ------------------
 Software Developer
 ------------------
