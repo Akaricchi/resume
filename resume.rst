@@ -1,9 +1,9 @@
 
 Andrii Aleksieiev
 =================
-------------------
-Software Developer
-------------------
+-----------------
+Software Engineer
+-----------------
 
 .. class:: mid
 
@@ -11,18 +11,10 @@ Software Developer
 
 ----
 
-Self-taught programmer from Ukraine with over 10 years of informal experience, particularly in game development and 
-modding, as well as in contributing to and maintaining various open source software projects.
+Self-taught software engineer, over 10 years of experience leading and contributing to open source projects in game development and the surrounding ecosystem.
 
 Skills
 ------
-
-* **Spoken languages**:
-    
-    * English (fluent)
-    * German (B1, learning)
-    * Ukrainian (native)
-    * Russian (native)
 
 * **Programming languages**:
 
@@ -30,23 +22,28 @@ Skills
     * **Secondary expertise**: Python
     * **Familiarity**: Bash, C++, C#, JavaScript, Lua, Java, various others.
 
-* **Operating systems**: Linux
+* **Operating systems**: Linux; experienced with cross-compiling to Windows and macOS
 
-* **Graphics programming**: OpenGL 3.3+, GLSL
+* **Graphics programming**: OpenGL 3.3+, GLSL, minor Vulkan experience, SDL3-GPU
 
-* **Build systems**: Meson, CMake, GNU Make
+* **Build systems**: Meson, CMake, GNU Make, Ninja
 
 * **Collaboration**:
 
     * Proficient with **git**: hygienic commits; can work on multiple branches at a time; ``rebase`` is my close friend.
-    * Able to read, review, and integrate pull requests/patches from contributors.
-    * Able to work with maintainers of other projects, submit and iterate on patches, discuss design decisions.
+    * Can read, review, and integrate pull requests/patches from contributors.
+    * Can work with maintainers of other projects, submit and iterate on patches, discuss design decisions.
 
-* **Debugging**: RenderDoc, apitrace, gdb, prof, strace, etc.
+* **Debugging**: RenderDoc, apitrace, gdb, lldb, prof, strace, etc.
 
 * **Documentation**: Doxygen, docutils
 
+* **CI and deployment**: Github Actions
+
 * **Other software**: nginx, Blender, Krita, GIMP, SPIR-V tools
+
+* **Spoken languages**: English (fluent), German (B1, learning), Ukrainian (native), Russian (native)
+
 
 
 Open Source involvement
@@ -54,23 +51,24 @@ Open Source involvement
 
 .. project:: Taisei Project
   :url: https://taisei-project.org/
-  :role: Contributor (2011 - 2013); Lead Developer (2017 - present)
- 
-  A free and open source Japanese-style "bullet hell" (Danmaku_) top-down shooter; a fangame of the `Touhou Project`_ 
-  series. Original engine built with SDL, with a custom OpenGL 3.3 renderer. Written in C (GNU C11), with tooling 
-  written in Python. Runs on any modern desktop OS and in the browser (via Emscripten_).
+  :role: Major contributor (2011 - 2013); Lead Developer (2017 - present)
 
-  * (Re-)wrote most of the engine, including but not limited to the renderer, audio, virtual filesystem, replay, live 
+  A free and open source Japanese-style "bullet hell" (Danmaku_) top-down shooter; a fangame of the `Touhou Project`_ 
+  series.
+
+  Original engine built with SDL_, with a 2 custom renderers (OpenGL 3.3 and SDL_GPU). Written in C (GNU C11),
+  with tooling written in Python. Runs on any modern desktop OS and in the browser (via Emscripten_).
+
+  * Wrote most of the engine, including but not limited to the renderer, audio, virtual filesystem, replay, live 
     reloading, and threaded asset loading subsystems. 
-  * Designed and implemented a system for asynchronous programming of game logic and stages in C based on stackful 
-    coroutines, with a macro-powered DSL. 
+  * Designed and implemented a coroutine-based system for asynchronous programming of game logic and stages.
   * Designed and implemented a lot of the gameplay mechanics, stages, bullet patterns, and special effects. 
 
 
 .. project:: Koishi
   :url: https://github.com/taisei-project/koishi
   :role: Lead Developer (2019 - present)
-  
+
   A small, decently portable C11 library that implements asymmetric stackful coroutines (similar to Lua's coroutines, 
   but for native code). Supports many operating systems and CPU architectures. Modular design, can use boost.context 
   assembly routines, POSIX ucontext, Windows fibers, longjmp, Emscripten fibers, etc.
@@ -87,7 +85,7 @@ Open Source involvement
 
   * Designed and implemented the Fibers_ API and runtime, a low-level context-switching primitive similar to POSIX 
     ucontext, based on Asyncify_.
-  * Found and squished various random bugs in the runtime.
+  * Found and fixed various bugs in the runtime.
 
 
 .. project:: Meson
@@ -107,10 +105,28 @@ Open Source involvement
     zlib_, ogg_, opus_, opusfile_
 
 
+.. project:: SDL
+  :url: https://libsdl.org/
+  :role: Contributor (2021 - present; intermittent)
+
+  A widely used platfrom abstraction library for games and other multimedia applications.
+
+  * Participated in the development of SDL_GPU, the new GPU abstraction subsystem in SDL3:
+     * Wrote an SDL_Render driver using the new GPU API.
+     * Found and fixed some API deficiencies prior to stabilization.
+     * Found and fixed various implementation bugs.
+     * Helped with testing and benchmarking as an early adopter of the API via `Taisei Project`_.
+     * Helped with establishing the supported feature set.
+
+  * Contributed a performant hashtable implementation.
+
+  * Submitted various bugfixes.
+
+
 .. project:: RocketMinsta
   :url: https://github.com/kasymovga/RocketMinsta
   :role: Lead Developer (2011 - 2017)
-    
+
   A formerly popular multi-feature mod for Nexuiz_, a defunct open source first-person arena shooter game. Features new 
   game types, bug fixes, server administration tools, updated graphics, Xonotic_ backports, and more. Written in a 
   dialect of QuakeC, an interpreted language for Quake 1-based engines.
@@ -119,7 +135,7 @@ Open Source involvement
 .. project:: DarkPlacesRM
   :url: https://github.com/kasymovga/DarkPlacesRM
   :role: Fork Developer (2015 - 2017)
- 
+
   A fork of the DarkPlaces engine which powers Nexuiz_ and Xonotic_. Features RocketMinsta_-specific extensions and 
   compatibility fixes.
 
@@ -142,11 +158,11 @@ Open Source involvement
 .. project:: This resume
   :url: https://akaricchi.github.io/resume
   :role: Author (2022 - present)
-  
+
   An up to date HTML version of this resume is available at https://akaricchi.github.io/resume
-  
+
   You have revision :revision:`.`, built on :date:`%b %d %Y %H:%M UTC`
-  
+
   The source code is available at https://github.com/Akaricchi/resume
 
 
