@@ -30,7 +30,7 @@ Skills
 
 * **Collaboration**:
 
-    * Proficient with **git**: hygienic commits; can work on multiple branches at a time; ``rebase`` is my close friend.
+    * Highly proficient with **git**.
     * Can read, review, and integrate pull requests/patches from contributors.
     * Can work with maintainers of other projects, submit and iterate on patches, discuss design decisions.
 
