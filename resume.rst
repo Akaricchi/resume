@@ -56,7 +56,7 @@ Open Source involvement
   A free and open source Japanese-style "bullet hell" (Danmaku_) top-down shooter; a fangame of the `Touhou Project`_ 
   series.
 
-  Original engine built with SDL_, with a 2 custom renderers (OpenGL 3.3 and SDL_GPU). Written in C (GNU C11),
+  Original engine built with SDL_, with 2 custom renderers (OpenGL 3.3 and SDL_GPU). Written in C (GNU C11),
   with tooling written in Python. Runs on any modern desktop OS and in the browser (via Emscripten_).
 
   * Wrote most of the engine, including but not limited to the renderer, audio, virtual filesystem, replay, live 
